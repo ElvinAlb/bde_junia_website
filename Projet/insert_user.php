@@ -37,5 +37,5 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) &&
 
 // Fermer la connexion
 $link->close();
-//header("Location:formulaire.html");
+//header("Location:formulaire.php");
 ?>
