@@ -14,29 +14,7 @@
 
 <body>
 
-<header>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="accueil.php">
-                    <img src="img/texte_bde_white.png" alt="BDE Naeptune" class="text_logo">
-                    <img src="img/logo_bde.png" alt="Logo Naeptune" class="logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="events.php">Evenements</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+<?php include 'header.html'?>
 
     <FORM ACTION='insert_user.php' METHOD='post'>
 
@@ -49,40 +27,6 @@
 
 </body>
 
-  <!-- Site footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-6">
-          <h6>A propos</h6>
-          <p class="text-justify">Adhère au BDE sinon Yvi viendra chez toi te menacer dans ton sommeil</p>
-        </div>
-
-        <div class="col-xs-6 col-md-3">
-          <h6>Navigation</h6>
-          <ul class="footer-links">
-            <li><a href="events.html">Evenements</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="">Conformité RGPD</a></li>
-          </ul>
-        </div>
-      </div>
-      <hr>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-sm-6 col-xs-12">
-          <p class="copyright-text">Copyright &copy; 2024 All Rights Reserved by Le Club Brésilienne.
-          </p>
-        </div>
-
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <ul class="social-icons">
-            <li><a class="instagram" href="https://www.instagram.com/bde_naeptune/"><i class="fa-brands fa-instagram"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-</footer>  
+<?php include 'footer.html'?>
 
 </html>

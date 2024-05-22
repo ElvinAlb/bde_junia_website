@@ -1,14 +1,14 @@
 <?php
-// Paramètres de connexion à la base de données
-$servername = "localhost";
-$username = "root";
-$password = '';
-$dbname = "BDE";
+// // Paramètres de connexion à la base de données
+// $servername = "localhost";
+// $username = "root";
+// $password = '';
+// $dbname = "BDE";
 
-// Créer une connexion
-$link = mysqli_connect($servername, $username, $password, $dbname);
+// // Créer une connexion
+// $link = mysqli_connect($servername, $username, $password, $dbname);
 
-echo "Connexion réussie";
+include 'db_connection.php';
 
 if (isset($_POST['name']) && isset($_POST['date']) && isset($_POST['description']) && isset($_POST['capacity'])) {
     $name = $_POST['name'];
