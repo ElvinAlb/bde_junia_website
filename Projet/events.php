@@ -17,7 +17,7 @@
 <header>
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="accueil.html">
+                <a class="navbar-brand" href="accueil.php">
                     <img src="img/texte_bde_white.png" alt="BDE Naeptune" class="text_logo">
                     <img src="img/logo_bde.png" alt="Logo Naeptune" class="logo">
                 </a>
@@ -27,7 +27,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="events.html">Evenements</a>
+                            <a class="nav-link" href="events.php">Evenements</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact</a>
