@@ -1,0 +1,36 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pour espacer les éléments dans le header */
+    padding: 20px;
+    background: rgb(59,43,91);
+    border-bottom: 4px solid #ed6b4f;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optionnel : pour ajouter une ombre au header */
+}
+.logo {
+    max-height: 5rem; /* Ajustez la taille selon vos besoins */
+}
+nav {
+    display: flex;
+    gap: 20px; /* Espacement entre les liens de navigation */
+}
+
+.text_logo {
+    max-height: 5rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+.titre {
+    text-decoration: none;
+    font-family : Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    color: whitesmoke;
+}
+
+.nav-link {
+    color: whitesmoke;
+    
+}
