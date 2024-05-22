@@ -1,0 +1,40 @@
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+input[type="number"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type="number"]:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+    outline: none;
+    margin-bottom: 20px;
+}
+input[type="submit"] {
+    background-color: rgb(59,43,91);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+input[type="submit"]:hover {
+    color: #ed6b4f;
+}
+input[name="description"]{
+    width: 200px;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
