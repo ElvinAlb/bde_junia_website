@@ -57,7 +57,7 @@
     while($row = mysqli_fetch_assoc($result)) {
         echo "<tr>";
         echo "<form action='modif_events.php' method='post'>";
-        //echo "<td>ID : <input type='hidden' name='id' value='" . $row["idEvent"] . "'>" . $row["idEvent"] . "</td>";
+        echo "<td>ID : <input type='hidden' name='id' value='" . $row["idEvent"] . "'>" . $row["idEvent"] . "</td>";
         echo "<td>Nom : <input type='text' name='nom' value='" . $row["nom"] . "'></td>";
         echo "<td>Date : <input type='date' name='date' value='" . $row["date"] . "'></td>";
         echo "<td>Description : <input type='text' name='description' value='" . $row["description"] . "'></td>";
