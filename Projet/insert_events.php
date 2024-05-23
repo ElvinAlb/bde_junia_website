@@ -32,5 +32,5 @@ if (isset($_POST['name']) && isset($_POST['date']) && isset($_POST['description'
 
 // Fermer la connexion
 $link->close();
-header("Location:events.php");
+header("Location:gestion_evenements.php");
 ?>

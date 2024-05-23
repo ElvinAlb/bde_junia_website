@@ -32,5 +32,5 @@ if ($link->query($sql) === TRUE) {
 }
 
 $link->close();
-header("Location:events.php");
+header("Location:gestion_evenements.php");
 ?>
