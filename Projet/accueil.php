@@ -13,7 +13,7 @@
 
 <body>
 
-<?php include 'header.html'?>
+<?php include "header.html"; ?>
 
     <main>
         <h1>Evènements à venir :</h1>
@@ -24,28 +24,36 @@
             <?php
             $servername = "localhost";
             $username = "root";
-            $password = '';
+            $password = "";
             $dbname = "BDE";
             // Afficher tous les évènements
             // Créer une connexion
             $link = mysqli_connect($servername, $username, $password, $dbname);
 
-            $query = "SELECT idEvent, nom, date, description, capacite FROM evenements WHERE date > CURDATE() ORDER BY idEvent";
-            $result = mysqli_query($link, $query);?>
+            $query =
+                "SELECT idEvent, nom, date, description, capacite FROM evenements WHERE date > CURDATE() ORDER BY idEvent";
+            $result = mysqli_query($link, $query);
+            ?>
             <?php while ($row = mysqli_fetch_assoc($result)) {
-            echo "<tr>";
-            echo "<td> Evènement : ". htmlspecialchars($row['nom']) . "</td> ";
-            echo "<td> Date : " . htmlspecialchars($row['date']) . "</td>";
-            echo "<td> Description : " . htmlspecialchars($row['description']) . "</td>";
-            echo "<td> Nombre max de personnes : " . htmlspecialchars($row['capacite']) . "</td>";
-            echo "</tr><br/>";
-        }?>
+                echo "<tr>";
+                echo "<td> Evènement : " .
+                    htmlspecialchars($row["nom"]) .
+                    "</td> ";
+                echo "<td> Date : " . htmlspecialchars($row["date"]) . "</td>";
+                echo "<td> Description : " .
+                    htmlspecialchars($row["description"]) .
+                    "</td>";
+                echo "<td> Nombre max de personnes : " .
+                    htmlspecialchars($row["capacite"]) .
+                    "</td>";
+                echo "</tr><br/>";
+            } ?>
         </container>
 
 
     </main>
 
-    <?php include 'footer.html'?>
+    <?php include "footer.html"; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoPSCCOlvOqBzafKdl6Ri4m2EdP8rjFS+Ks7F0XqbbFjEJ9" crossorigin="anonymous"></script>
 </body>

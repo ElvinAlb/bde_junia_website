@@ -14,7 +14,7 @@
 
 <body>
 
-<?php include 'header.html'?>
+<?php include "header.html"; ?>
     <h1> Ajout d'un évènement : </h1>
     <FORM ACTION='insert_events.php' METHOD='post'>
         Nom : <INPUT TYPE="text" SIZE=30 NAME = 'name' required/> <br/>
@@ -24,44 +24,42 @@
         <INPUT TYPE='SUBMIT' VALUE='Valider'/> <br/>
         </FORM>
 
-    <?php         
-    
+    <?php
     $servername = "localhost";
     $username = "root";
-    $password = '';
+    $password = "";
     $dbname = "BDE";
     // Afficher tous les évènements
     // Créer une connexion
     echo "<h1> Liste des évènements : </h1>";
     $link = mysqli_connect($servername, $username, $password, $dbname);
-    
-            $query = "SELECT idEvent, nom, date, description, capacite FROM evenements ORDER BY idEvent";
-/*             $result = mysqli_query($link, $query);?>
-            <?php while ($row = mysqli_fetch_assoc($result)) {
-            echo "<tr>";
-            echo "<td> ID : ". htmlspecialchars($row['idEvent']) . "</td> ";
-            echo "<td> Evènement : ". htmlspecialchars($row['nom']) . "</td> ";
-            echo "<td> Date : " . htmlspecialchars($row['date']) . "</td>";
-            echo "<td> Description : " . htmlspecialchars($row['description']) . "</td>";
-            echo "<td> Nombre max de personnes : " . htmlspecialchars($row['capacite']) . "</td>";
-            echo "<td><form action='supprimer_event.php' method='post'>
-                  <input type='hidden' name='id' value='" . $row['idEvent'] . "'>
-                  <input type='submit' name='supp' value='Supprimer'>
-              </form></td>";
-            echo "</tr><br/>";} */
-            
-            echo "<table>";
-    
+
+    $query =
+        "SELECT idEvent, nom, date, description, capacite FROM evenements ORDER BY idEvent";
+
+    echo "<table>";
 
     $result = mysqli_query($link, $query);
-    while($row = mysqli_fetch_assoc($result)) {
+    while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>";
         echo "<form action='modif_events.php' method='post'>";
-        echo "<td>ID : <input type='hidden' name='id' value='" . $row["idEvent"] . "'>" . $row["idEvent"] . "</td>";
-        echo "<td>Nom : <input type='text' name='nom' value='" . $row["nom"] . "'></td>";
-        echo "<td>Date : <input type='date' name='date' value='" . $row["date"] . "'></td>";
-        echo "<td>Description : <input type='text' name='description' value='" . $row["description"] . "'></td>";
-        echo "<td>Capacité : <input type='text' name='capacite' value='" . $row["capacite"] . "'></td>";
+        echo "<td>ID : <input type='hidden' name='id' value='" .
+            $row["idEvent"] .
+            "'>" .
+            $row["idEvent"] .
+            "</td>";
+        echo "<td>Nom : <input type='text' name='nom' value='" .
+            $row["nom"] .
+            "'></td>";
+        echo "<td>Date : <input type='date' name='date' value='" .
+            $row["date"] .
+            "'></td>";
+        echo "<td>Description : <input type='text' name='description' value='" .
+            $row["description"] .
+            "'></td>";
+        echo "<td>Capacité : <input type='text' name='capacite' value='" .
+            $row["capacite"] .
+            "'></td>";
         echo "<td>
                 <button type='submit' name='action' value='modifier'>Modifier</button>
                 <button type='submit' name='action' value='supprimer'>Supprimer</button>
@@ -70,10 +68,7 @@
         echo "</tr>";
     }
     echo "</table>";
-            
-            
-            
-            ?>
+    ?>
 
 
 
@@ -81,6 +76,6 @@
 
 </body>
 
-<?php include 'footer.html'?>  
+<?php include "footer.html"; ?>  
 
 </html>

@@ -14,51 +14,49 @@
 
 <body>
 
-<?php include 'header.html'?>
+<?php include "header.html"; ?>
     <h1> Tous les évènements à venir : </h1>
 
-    <?php         
-    
+    <?php
     $servername = "localhost";
     $username = "root";
-    $password = '';
+    $password = "";
     $dbname = "BDE";
     // Afficher tous les évènements
     // Créer une connexion
     $link = mysqli_connect($servername, $username, $password, $dbname);
-   
-    
-            $query = "SELECT idEvent, nom, date, description, capacite FROM evenements WHERE date > CURDATE() ORDER BY idEvent";
-            $result = mysqli_query($link, $query);?>
-            <?php
-            if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-            echo "<tr>";
-            echo "<td> ID : ". htmlspecialchars($row['idEvent']) . "</td> ";
-            echo "<td> Evènement : ". htmlspecialchars($row['nom']) . "</td> ";
-            echo "<td> Date : " . htmlspecialchars($row['date']) . "</td>";
-            echo "<td> Description : " . htmlspecialchars($row['description']) . "</td>";
-            echo "<td> Nombre max de personnes : " . htmlspecialchars($row['capacite']) . "</td>";
-            echo "<td><form action='supprimer_event.php' method='post'>
-                  <input type='hidden' name='id' value='" . $row['idEvent'] . "'>
-                  <input type='submit' name='supp' value='Supprimer'>
-              </form></td>";
-            echo "</tr><br/>";}
-            mysqli_close($link);
+
+    $query =
+        "SELECT idEvent, nom, date, description, capacite FROM evenements WHERE date > CURDATE() ORDER BY idEvent";
+    $result = mysqli_query($link, $query);
+    ?>
+            <?php if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr>";
+                    echo "<td> ID : " .
+                        htmlspecialchars($row["idEvent"]) .
+                        "</td> ";
+                    echo "<td><h1>" .
+                        htmlspecialchars($row["nom"]) .
+                        "</h1></td> ";
+                    echo "<td><p> Description : " .
+                        htmlspecialchars($row["description"]) .
+                        "</p></td>";
+                    echo "<td> Date : " .
+                        htmlspecialchars($row["date"]) .
+                        "</td>";
+                    echo "<td> Nombre max de personnes : " .
+                        htmlspecialchars($row["capacite"]) .
+                        "</td>";
+                    echo "</tr><br/>";
+                }
+                mysqli_close($link);
             } else {
                 echo "<p>Aucun évènement à venir :( Veuillez vous référer à Yvi</p>";
-                }
-
-            
-
-            ?>
-
-
-
-
+            } ?>
 
 </body>
 
-<?php include 'footer.html'?>  
+<?php include "footer.html"; ?>  
 
 </html>

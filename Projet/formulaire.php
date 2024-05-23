@@ -14,7 +14,7 @@
 
 <body>
 
-<?php include 'header.html'?>
+<?php include "header.html"; ?>
 
     <FORM ACTION='insert_user.php' METHOD='post'>
 
@@ -27,6 +27,6 @@
 
 </body>
 
-<?php include 'footer.html'?>
+<?php include "footer.html"; ?>
 
 </html>
