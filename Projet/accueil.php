@@ -30,7 +30,7 @@
             // Créer une connexion
             $link = mysqli_connect($servername, $username, $password, $dbname);
 
-            $query = "SELECT nom, date, description, capacite FROM evenements ORDER BY idEvent";
+            $query = "SELECT idEvent, nom, date, description, capacite FROM evenements WHERE date > CURDATE() ORDER BY idEvent";
             $result = mysqli_query($link, $query);?>
             <?php while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
