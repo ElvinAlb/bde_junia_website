@@ -1,28 +1,17 @@
 <?php
-// Paramètres de connexion à la base de données
-$servername = "localhost";
-$username = "root";
-$password = '';
-$dbname = "BDE";
+include 'db_connection.php';
 
-// Créer une connexion
-$link = mysqli_connect($servername, $username, $password, $dbname);
-
-
-// Vérifier la connexion
-//if ($link->connect_error) {
-  //  die("Connexion échouée: " . $link->connect_error);
-//}
 echo "Connexion réussie";
 
-if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['evenement'])) {
+if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['promo'])) {
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
     $email = $_POST['email'];
-    $evenement = $_POST['evenement'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $promo = $_POST['promo'];
 
     // Préparer et exécuter la requête d'insertion
-    $sql = "INSERT INTO users (nom, prenom, email, evenement) VALUES ('$nom', '$prenom', '$email', '$evenement')";
+    $sql = "INSERT INTO users (nom, prenom, email, password, promo) VALUES ('$nom', '$prenom', '$email', '$password', '$promo')";
     $result = mysqli_query($link, $sql);
 
     if ($result) {
@@ -37,5 +26,5 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) &&
 
 // Fermer la connexion
 $link->close();
-//header("Location:formulaire.php");
+header("Location:formulaire.php");
 ?>

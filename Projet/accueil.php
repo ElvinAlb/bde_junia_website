@@ -22,13 +22,7 @@
         <container>
             
             <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "BDE";
-            // Afficher tous les évènements
-            // Créer une connexion
-            $link = mysqli_connect($servername, $username, $password, $dbname);
+            include 'db_connection.php';
 
             $query =
                 "SELECT idEvent, nom, date, description, capacite FROM evenements WHERE date > CURDATE() ORDER BY idEvent";

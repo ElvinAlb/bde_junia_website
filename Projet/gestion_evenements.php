@@ -25,15 +25,9 @@
         </FORM>
 
     <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "BDE";
-    // Afficher tous les évènements
-    // Créer une connexion
-    echo "<h1> Liste des évènements : </h1>";
-    $link = mysqli_connect($servername, $username, $password, $dbname);
+    include 'db_connection.php';
 
+    echo "<h1> Liste des évènements : </h1>";
     $query =
         "SELECT idEvent, nom, date, description, capacite FROM evenements ORDER BY idEvent";
 
