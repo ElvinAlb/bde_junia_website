@@ -36,9 +36,9 @@
             ?>
             <?php while ($row = mysqli_fetch_assoc($result)) {
                 echo "<tr>";
-                echo "<td> Evènement : " .
+                echo "<td><h2>" .
                     htmlspecialchars($row["nom"]) .
-                    "</td> ";
+                    "</h2></td> ";
                 echo "<td> Date : " . htmlspecialchars($row["date"]) . "</td>";
                 echo "<td> Description : " .
                     htmlspecialchars($row["description"]) .
