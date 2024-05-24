@@ -16,7 +16,7 @@
 
 <?php include "header.html"; ?>
 
-    <FORM ACTION='insert_user.php' METHOD='post'>
+    <FORM ACTION='actions/insert_user.php' METHOD='post'>
 
         Nom : <INPUT TYPE=TEXT SIZE=20 NAME = 'nom' required/> <br/>
         Prénom : <INPUT TYPE=TEXT SIZE=20 NAME='prenom' required/> <br/>

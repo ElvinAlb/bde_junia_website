@@ -1,14 +1,5 @@
 <?php
-// // Paramètres de connexion à la base de données
-// $servername = "localhost";
-// $username = "root";
-// $password = '';
-// $dbname = "BDE";
-
-// // Créer une connexion
-// $link = mysqli_connect($servername, $username, $password, $dbname);
-
-include 'db_connection.php';
+include '../db_connection.php';
 
 if (isset($_POST['name']) && isset($_POST['date']) && isset($_POST['description']) && isset($_POST['capacity'])) {
     $name = $_POST['name'];
@@ -32,5 +23,5 @@ if (isset($_POST['name']) && isset($_POST['date']) && isset($_POST['description'
 
 // Fermer la connexion
 $link->close();
-header("Location:gestion_evenements.php");
+header("Location:../gestion_evenements.php");
 ?>

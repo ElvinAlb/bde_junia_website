@@ -16,7 +16,7 @@
 
 <?php include "header.html"; ?>
     <h1> Ajout d'un évènement : </h1>
-    <FORM ACTION='insert_events.php' METHOD='post'>
+    <FORM ACTION='actions/insert_events.php' METHOD='post'>
         Nom : <INPUT TYPE="text" SIZE=30 NAME = 'name' required/> <br/>
         Date : <INPUT TYPE="date" NAME='date' required/> <br/>
         Description : <INPUT TYPE="text" SIZE=255 NAME='description' required/> <br/>
@@ -36,7 +36,7 @@
     $result = mysqli_query($link, $query);
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>";
-        echo "<form action='modif_events.php' method='post'>";
+        echo "<form action='actions/modif_events.php' method='post'>";
         echo "<td>ID : <input type='hidden' name='id' value='" .
             $row["idEvent"] .
             "'>" .

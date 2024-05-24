@@ -1,5 +1,5 @@
 <?php
-include "db_connection.php"; // Inclure le fichier de connexion
+include "../db_connection.php"; // Inclure le fichier de connexion
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST["id"];
@@ -29,5 +29,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $link->close();
-header("Location:gestion_evenements.php");
+header("Location:../gestion_evenements.php");
 ?>
