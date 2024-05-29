@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html> 
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
@@ -35,10 +39,14 @@
     } else {
         echo "Aucun événement trouvé";
     }
+    $nom = isset($_SESSION['nom']) ? $_SESSION['nom'] : '';
+    $prenom = isset($_SESSION['prenom']) ? $_SESSION['prenom'] : '';
+    $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
+
     ?>
-        Nom : <INPUT TYPE=TEXT SIZE=20 NAME = 'nom' required/> <br/>
-        Prénom : <INPUT TYPE=TEXT SIZE=20 NAME='prenom' required/> <br/>
-        Email : <INPUT TYPE=TEXT SIZE=20 NAME='email' required/> <br/>
+        Nom : <INPUT TYPE=TEXT SIZE=20 NAME = 'nom' required value=<?php echo $nom?>> <br/>
+        Prénom : <INPUT TYPE=TEXT SIZE=20 NAME='prenom' required value=<?php echo $prenom?>> <br/>
+        Email : <INPUT TYPE=TEXT SIZE=20 NAME='email' required value=<?php echo $email?>> <br/>
         <select id="promo" name="promo" required>
                 <option value="ADI1">ADI1</option>
                 <option value="ADI2">ADI2</option>
@@ -48,12 +56,6 @@
             </select>
         <INPUT TYPE='SUBMIT' VALUE='Valider'/> <br/>
         </FORM>
-
-
-
-
-
-
 
 </body>
 
