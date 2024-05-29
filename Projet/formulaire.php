@@ -16,6 +16,10 @@
 
 <?php include "header.html"; ?>
 
+    <h1>Se connecter</h1>
+
+    <h1>Pas encore de compte ?</h1>
+
     <FORM ACTION='actions/insert_user.php' METHOD='post'>
 
         Nom : <INPUT TYPE=TEXT SIZE=20 NAME = 'nom' required/> <br/>

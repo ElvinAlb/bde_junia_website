@@ -19,6 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } elseif ($action == "supprimer") {
         $sql = "DELETE FROM evenements WHERE idEvent=$id";
+        $sql2 = "DELETE FROM inscriptions WHERE idEvent=$id";
+        $result2 = mysqli_query($link, $sql2);
 
         if ($link->query($sql) === true) {
             echo "Record deleted successfully";

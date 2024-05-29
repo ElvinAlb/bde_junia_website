@@ -15,41 +15,42 @@
 <body>
 
 <?php include "header.html"; ?>
-    <h1>Inscription à un évènement : </h1>
 
-    
-
-    <FORM ACTION='actions/insert_inscription.php' METHOD='post'>
     <?php
     include 'db_connection.php';
 
-    $sql1 = "SELECT idEvent, nom FROM evenements";
-    $result1 = $link->query($sql1);
+    echo "<h1> Liste des inscrits : </h1>";
+    $query = "SELECT idEvent, nom, prenom, email FROM inscriptions ORDER BY idEvent";
 
-    if ($result1->num_rows > 0) {
-        // Afficher les événements sous forme de boutons radio
-        echo '<p>Evènement : </p>';
-        while($row = $result1->fetch_assoc()) {
-            echo '<input type="radio" name="idEvent" value="' . $row["idEvent"] . '"> ' . $row["nom"] . '<br>';
+    echo "<table class='table table-striped'>";
+    echo "<thead>";
+    echo "<tr>";
+    echo "<th>ID évènement</th>";
+    echo "<th>Nom</th>";
+    echo "<th>Prénom</th>";
+    echo "<th>Email</th>";
+    echo "</tr>";
+    echo "</thead>";
+    echo "<tbody>";
+
+    $result = mysqli_query($link, $query);
+    if ($result) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<tr>";
+            echo "<td>" . htmlspecialchars($row["idEvent"]) . "</td>";
+            echo "<td>" . htmlspecialchars($row["nom"]) . "</td>";
+            echo "<td>" . htmlspecialchars($row["prenom"]) . "</td>";
+            echo "<td>" . htmlspecialchars($row["email"]) . "</td>";
+            echo "</tr>";
         }
     } else {
-        echo "Aucun événement trouvé";
+        echo "<tr><td colspan='4'>Aucune inscription trouvée.</td></tr>";
     }
+    echo "</tbody>";
+    echo "</table>";
+
+    mysqli_close($link);
     ?>
-        Nom : <INPUT TYPE=TEXT SIZE=20 NAME = 'nom' required/> <br/>
-        Prénom : <INPUT TYPE=TEXT SIZE=20 NAME='prenom' required/> <br/>
-        Email : <INPUT TYPE=TEXT SIZE=20 NAME='email' required/> <br/>
-        <select id="promo" name="promo" required>
-                <option value="ADI1">ADI1</option>
-                <option value="ADI2">ADI2</option>
-                <option value="AP3">AP3</option>
-                <option value="AP4">AP4</option>
-                <option value="AP5">AP5</option>
-            </select>
-        <INPUT TYPE='SUBMIT' VALUE='Valider'/> <br/>
-        </FORM>
-
-
 
 
 

@@ -9,14 +9,25 @@ if (isset($_POST['idEvent']) && isset($_POST['nom']) && isset($_POST['prenom']) 
     $prenom = $_POST['prenom'];
     $email = $_POST['email'];
 
-    // Préparer et exécuter la requête d'insertion
-    $sql = "INSERT INTO inscriptions (idEvent, nom, prenom, email) VALUES ('$idEvent', '$nom', '$prenom', '$email')";
-    $result = mysqli_query($link, $sql);
+    $query2 = "SELECT COUNT(*) AS nb_inscrits FROM inscriptions WHERE idEvent=$idEvent";
+    $result2 = mysqli_query($link, $query2);
+    $nb_inscrits = mysqli_fetch_assoc($result2)['nb_inscrits'];
 
-    if ($result) {
-        echo "Nouveau record créé avec succès";
+    $query3 = "SELECT capacite FROM evenements WHERE idEvent=$idEvent";
+    $result3 = mysqli_query($link, $query3);
+    $capacite = mysqli_fetch_assoc($result3)['capacite'];
+
+    if ($capacite - $nb_inscrits > 0){
+        // Préparer et exécuter la requête d'insertion
+        $query1 = "INSERT INTO inscriptions (idEvent, nom, prenom, email) VALUES ('$idEvent', '$nom', '$prenom', '$email')";
+        $result1 = mysqli_query($link, $query1);
+    }
+
+
+    if ($result1) {
+        echo "Inscription réalisée avec succès";
     } else {
-        echo "Erreur lors de la création du record: " . mysqli_error($link);
+        echo "Aucune place disponible pour cet évènement." . mysqli_error($link);
     }
 } else {
     echo "Tous les champs du formulaire doivent être renseignés.";
@@ -25,5 +36,5 @@ if (isset($_POST['idEvent']) && isset($_POST['nom']) && isset($_POST['prenom']) 
 
 // Fermer la connexion
 $link->close();
-header("Location:../gestion_inscriptions.php");
+header("Location:../inscription.php");
 ?>

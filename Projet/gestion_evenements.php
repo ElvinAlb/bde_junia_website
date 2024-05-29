@@ -15,7 +15,7 @@
 <body>
 
 <?php include "header.html"; ?>
-    <h1> Ajout d'un évènement : </h1>
+    <h1> Ajouter un évènement : </h1>
     <FORM ACTION='actions/insert_events.php' METHOD='post'>
         Nom : <INPUT TYPE="text" SIZE=30 NAME = 'name' required/> <br/>
         Date : <INPUT TYPE="date" NAME='date' required/> <br/>

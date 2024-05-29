@@ -20,12 +20,16 @@
     <?php
     include 'db_connection.php';
 
-    $query =
-        "SELECT idEvent, nom, date, description, capacite FROM evenements WHERE date > CURDATE() ORDER BY idEvent";
-    $result = mysqli_query($link, $query);
+    $query1 = "SELECT idEvent, nom, date, description, capacite FROM evenements WHERE date > CURDATE() ORDER BY idEvent";
+    $result1 = mysqli_query($link, $query1);
     ?>
-            <?php if (mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
+            <?php if (mysqli_num_rows($result1) > 0) {
+                while ($row = mysqli_fetch_assoc($result1)) {
+                    $eventId = $row['idEvent'];
+                    $query2 = "SELECT COUNT(*) AS nb_inscrits FROM inscriptions WHERE idEvent=$eventId";
+                    $result2 = mysqli_query($link, $query2);
+                    $nb_inscrits = mysqli_fetch_assoc($result2)['nb_inscrits'];
+
                     echo "<tr>";
                     echo "<td> ID : " .
                         htmlspecialchars($row["idEvent"]) .
@@ -39,11 +43,14 @@
                     echo "<td> Date : " .
                         htmlspecialchars($row["date"]) .
                         "</td>";
-                    echo "<td> Nombre max de personnes : " .
+                    echo "<td> ".$nb_inscrits." place(s) réservée(s) sur " .
                         htmlspecialchars($row["capacite"]) .
                         "</td>";
                     echo "</tr><br/>";
                 }
+                echo "<form action='inscription.php' method='get'>
+                <button type='submit' class='btn btn-primary'>S'inscrire à un évènement</button>
+            </form>";
                 mysqli_close($link);
             } else {
                 echo "<p>Aucun évènement à venir :( Veuillez vous référer à Yvi</p>";
