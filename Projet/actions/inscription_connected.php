@@ -1,12 +1,13 @@
 <?php
+session_start();
 include "../db_connection.php";
 
 echo "Connexion réussie";
 
-if (isset($_POST["nom"]) && isset($_POST["prenom"]) && isset($_POST["email"])) {
-    $nom = $_POST["nom"];
-    $prenom = $_POST["prenom"];
-    $email = $_POST["email"];
+if (isset($_SESSION["email"])) {
+    $email = $_SESSION["email"];
+    $nom = $_SESSION["nom"];
+    $prenom = $_SESSION["prenom"];
     $idEvent = $_GET["idEvent"];
 
     $query2 = "SELECT COUNT(*) AS nb_inscrits FROM inscriptions WHERE idEvent=$idEvent";
@@ -35,5 +36,5 @@ if (isset($_POST["nom"]) && isset($_POST["prenom"]) && isset($_POST["email"])) {
 
 // Fermer la connexion
 $link->close();
-header("Location:../inscription.php");
+header("Location:../evenements.php");
 ?>

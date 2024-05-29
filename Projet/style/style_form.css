@@ -1,3 +1,5 @@
+body { font-family: 'Inter', sans-serif; }
+
 form {
     background-color: #fff;
     padding: 20px;
@@ -95,4 +97,21 @@ button:hover {
     justify-content: center;
     align-items: center;
     gap: 20px;
+}
+
+div.event-card{
+    background-color: #ed6b4f;
+    color:white;
+}
+
+table {
+    margin-left: 5%;
+}
+
+form {
+    margin-left: 5%;
+}
+
+h1{
+    margin-left: 5%;
 }

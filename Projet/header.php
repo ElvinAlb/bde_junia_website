@@ -1,3 +1,6 @@
+<head>
+<link href="style/style_header.css" type="text/css" rel="stylesheet">
+</head>
 <header>
     <link href="style/style_header.css" type="text/css" rel="stylesheet">
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -16,25 +19,25 @@
                     </li>
                     <li class="nav-item">
                     <li class="nav-item">
-                        <a class="nav-link" href="inscription.php">Inscription</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="formulaire.php">Mon compte</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="contact.php">Contact</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.php">Se connecter</a>
-                    </li>
-                    <?php if($_SESSION['admin'] == 1){
-                        echo "<li class='nav-item'>
+                    <?php if (isset($_SESSION["email"])) {
+                        if ($_SESSION["admin"] == 1) {
+                            echo "<li class='nav-item'>
                         <a class='nav-link' href='gestion_evenements.php'>Gestion évènements</a>
                     </li>";
-                    echo "<li class='nav-item'>
+                            echo "<li class='nav-item'>
                         <a class='nav-link' href='gestion_inscriptions.php'>Gestion inscriptions</a>
                     </li>";
-                    }?>
+                        }
+                        echo "<li class='nav-item'>
+                        <a class='nav-link' href='actions/logout.php'>Déconnexion</a>
+                    </li>";
+                    } else {
+                        echo "<li class='nav-item'>
+                        <a class='nav-link' href='login.php'>Connexion</a>
+                    </li>";
+                    } ?>
                 </ul>
             </div>
         </div>

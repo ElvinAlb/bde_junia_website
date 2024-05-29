@@ -7,9 +7,8 @@
 <head>
     <meta charset="UTF-8"/> 
     <title>BDE Naeptune</title>
-    <link href="style/style_footer.css" type="text/css" rel="stylesheet">
-    <link href="style/style_header.css" type="text/css" rel="stylesheet">
     <link href="style/style_form.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css2?family=Inter%3Awght%40200%3B300%3B400%3B500%3B600%3B700%3B800%3B900&amp;display=swap&amp;ver=ec756f3724c38abb7d863a3b75d79e1c" type="text/css" media="all">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4C+2XonQ6dLLJz1q5Yc6RaO1I5F/4ajEe3K5oS/1jT1UpBs1sTTX9KJXPE6we3vI8STuQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -23,18 +22,25 @@
         
         <container>
         <?php
-        include 'db_connection.php';
+        include "db_connection.php";
 
-        $query = "SELECT idEvent, nom, date, description, capacite FROM evenements WHERE date > CURDATE() ORDER BY idEvent DESC LIMIT 4";
+        $query =
+            "SELECT idEvent, nom, date, description, capacite FROM evenements WHERE date > CURDATE() ORDER BY idEvent DESC LIMIT 4";
         $result = mysqli_query($link, $query);
         ?>
         <div class="events-container">
-            <?php while($row = mysqli_fetch_assoc($result)) { ?>
+            <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                 <div class="event-card">
                     <h2><?php echo htmlspecialchars($row["nom"]); ?></h2>
-                    <p><strong>Date:</strong> <?php echo htmlspecialchars($row["date"]); ?></p>
-                    <p><strong>Description:</strong> <?php echo htmlspecialchars($row["description"]); ?></p>
-                    <p><strong>Nombre max de personnes:</strong> <?php echo htmlspecialchars($row["capacite"]); ?></p>
+                    <p><strong>Date:</strong> <?php echo htmlspecialchars(
+                        $row["date"]
+                    ); ?></p>
+                    <p><strong>Description:</strong> <?php echo htmlspecialchars(
+                        $row["description"]
+                    ); ?></p>
+                    <p><strong>Nombre max de personnes:</strong> <?php echo htmlspecialchars(
+                        $row["capacite"]
+                    ); ?></p>
                 </div>
             <?php } ?>
         </div>
