@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 <head>
@@ -10,7 +12,7 @@
 </head>
 <body>
 
-<?php include "header.html"; ?>
+<?php include "header.php"; ?>
 
 <main>
     <h1>Connexion</h1>

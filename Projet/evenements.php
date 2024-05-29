@@ -14,7 +14,7 @@
 
 <body>
 
-<?php include "header.html"; ?>
+<?php include "header.php"; ?>
     <h1> Tous les évènements à venir : </h1>
 
     <?php

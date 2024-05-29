@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+<?php session_start(); ?>
 
 <!DOCTYPE html> 
 
@@ -18,7 +16,7 @@ session_start();
 
 <body>
 
-<?php include "header.html"; ?>
+<?php include "header.php"; ?>
     <h1>Inscription à un évènement : </h1>
 
     

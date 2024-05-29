@@ -1,5 +1,6 @@
+<?php session_start(); ?>
+
 <?php
-session_start();
 
 if (!isset($_SESSION['email']) || !$_SESSION['admin']) {
     header("Location: login.php");
@@ -23,7 +24,7 @@ if (!isset($_SESSION['email']) || !$_SESSION['admin']) {
 
 <body>
 
-<?php include "header.html"; ?>
+<?php include "header.php"; ?>
 
     <?php
     include 'db_connection.php';
