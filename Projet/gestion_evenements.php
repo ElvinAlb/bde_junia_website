@@ -41,7 +41,8 @@
     $result = mysqli_query($link, $query);
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>";
-        echo "<form action='actions/modif_events.php' method='post'>";
+        $eventId = $row["idEvent"];
+        echo "<form action='actions/modif_events.php?idEvent=$eventId' method='post'>";
         echo "<td>Nom : <input type='text' name='nom' value='" .
             $row["nom"] .
             "'></td>";
