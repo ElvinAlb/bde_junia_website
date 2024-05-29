@@ -58,6 +58,7 @@ button:hover {
     justify-content: start;
     align-items: flex-start;
     gap: 20px;
+    padding-left: 10%;
 }
 
 .event-card {
@@ -88,4 +89,10 @@ button:hover {
 
 .event-card p strong {
     color: #333;
+}
+.carousel-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
