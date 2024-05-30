@@ -7,6 +7,9 @@
 <head>
     <meta charset="UTF-8"/> 
     <title>BDE Naeptune</title>
+    <link rel="shortcut icon" href="img/logo_bde_junia.png" type="image/x-icon">
+    <link href="style/style_footer.css" type="text/css" rel="stylesheet">
+    <link href="style/style_header.css" type="text/css" rel="stylesheet">
     <link href="style/style_form.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css2?family=Inter%3Awght%40200%3B300%3B400%3B500%3B600%3B700%3B800%3B900&amp;display=swap&amp;ver=ec756f3724c38abb7d863a3b75d79e1c" type="text/css" media="all">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
