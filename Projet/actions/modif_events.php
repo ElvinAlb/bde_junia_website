@@ -2,7 +2,7 @@
 include "../db_connection.php"; // Inclure le fichier de connexion
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id = $_POST["id"];
+    $id = $_GET["S"];
     $action = $_POST["action"];
 
     if ($action == "modifier") {
