@@ -37,11 +37,11 @@
     <FORM ACTION='actions/insert_user.php' METHOD='post'>
         <div>
             <label for="name">Nom :</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="nom" name="nom" required>
         </div>
         <div>
             <label for="surname">Prénom :</label>
-            <input type="text" id="surname" name="surname" required>
+            <input type="text" id="prenom" name="prenom" required>
         </div>
         <div>
             <label for="email">Email :</label>
