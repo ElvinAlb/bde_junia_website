@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8"/> 
     <title>BDE Naeptune</title>
+    <link rel="shortcut icon" href="img/logo_bde_junia.png" type="image/x-icon">
     <link href="style/style_footer.css" type="text/css" rel="stylesheet">
     <link href="style/style_header.css" type="text/css" rel="stylesheet">
     <link href="style/style_form.css" type="text/css" rel="stylesheet">
