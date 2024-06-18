@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "BDE";
+$dbname = "bde";
 
 // Création de la connexion
 $link = mysqli_connect($servername, $username, $password, $dbname);

@@ -44,6 +44,7 @@
                         echo "<a href='actions/inscription_connected.php?idEvent=$eventId'><button>M'inscrire</button></a>";
                     }
                     else{
+                    
                         echo "<a href='inscription.php?idEvent=$eventId'><button>M'inscrire</button></a>";
                     }
                     ?>

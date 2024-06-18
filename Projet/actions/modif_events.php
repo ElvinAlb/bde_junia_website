@@ -1,8 +1,9 @@
 <?php
+session_start();
 include "../db_connection.php"; // Inclure le fichier de connexion
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id = $_GET["S"];
+    $id = $_GET["idEvent"];
     $action = $_POST["action"];
 
     if ($action == "modifier") {
