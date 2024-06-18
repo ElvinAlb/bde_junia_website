@@ -15,7 +15,7 @@
 <body>
 
 <?php include "header.php";
-$id = htmlspecialchars($_GET['idEvent']);
+$id = $_GET["idEvent"];
 $query = "SELECT nom FROM evenements WHERE idEvent=$id";
 $evenement = mysqli_query($link, $query);
 if(mysqli_num_rows($evenement) > 0) {
