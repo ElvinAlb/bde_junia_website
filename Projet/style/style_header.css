@@ -20,7 +20,9 @@ nav {
 }
 
 .text-header{
-    color: whitesmoke
+    color: whitesmoke;
+    font-size: 18px;
+    font-family: Inter, sans-serif;
 }
 
 .logo-container {

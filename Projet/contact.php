@@ -16,10 +16,16 @@
 
 <?php include 'header.php'?>
     
+<container style="text-align: center ; justify-content: space-betwenn; align-items: center">
+    <h2>Des questions ? N'hésitez pas à nous contacter !</h2>
+    <h3> Par mail : ✉ bde.bordeaux@asso.junia.com</h3>
+    <h3> Sur instagram : @ bde_naeptune</h3>
+
+    <img class="kento" src="img/kento.jpg" alt="Kento le boss">
+</container>
 
 
-
-    <?php include 'footer.html'?>  
+<?php include 'footer.html'?>  
 
 </body>
 

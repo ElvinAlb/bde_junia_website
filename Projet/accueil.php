@@ -20,7 +20,7 @@
 <?php include "header.php"; ?>
 
     <main>
-        <h1>Evènements à venir :</h1>
+        <h1>Événements à venir :</h1>
 
         
         <container>

@@ -36,7 +36,7 @@
                 <div class="event-card">
                     <h2><?php echo htmlspecialchars($row["nom"]); ?></h2>
                     <p><strong>Date:</strong> <?php echo htmlspecialchars($row["date"]); ?></p>
-                    <p><strong>Description:</strong> <?php echo htmlspecialchars($row["description"]); ?></p>
+                    <p><strong>Description:</strong><?php echo htmlspecialchars($row["description"]); ?></p>
                     <p><strong>Inscriptions:</strong> <?php echo $nb_inscrits."/" .
                         htmlspecialchars($row["capacite"])?></p>
                     <?php 
@@ -50,7 +50,6 @@
                 </div>
             <?php } ?>
         </div>
-        </container>
 </body>
 
 <?php include "footer.html"; ?>  
